@@ -2,7 +2,9 @@
   "users": [
     {
       "id": 123,
-      "name": "serdar"
+      "name": "admin",
+      "email": "admin@case.com",
+      "password": "123456"
     }
   ],
   "products": []
