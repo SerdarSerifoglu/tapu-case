@@ -1,11 +1,36 @@
 {
   "users": [
     {
-      "id": 123,
-      "name": "admin",
-      "email": "admin@case.com",
+      "id": 1,
+      "name": "Ömer Serdar Şerifoğlu",
+      "email": "serdar@case.com",
       "password": "123456"
     }
   ],
-  "products": []
+  "products": [
+    {
+      "id": "1",
+      "title": "Sample Product Title - 1",
+      "description": "Sample product description - 1",
+      "rate": 4,
+      "distance": 3.2,
+      "price": 100
+    },
+    {
+      "id": "2",
+      "title": "Sample Product Title - 2",
+      "description": "Sample product description - 2",
+      "rate": 4.1,
+      "distance": 1.2,
+      "price": 123
+    },
+    {
+      "id": "3",
+      "title": "Sample Product Title - 3",
+      "description": "Sample product description - 3",
+      "rate": 2.1,
+      "distance": 5,
+      "price": 65
+    }
+  ]
 }

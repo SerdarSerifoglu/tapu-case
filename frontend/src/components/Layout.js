@@ -17,16 +17,20 @@ const Layout = () => {
 
   return (
     <>
-      <Suspense
-        fallback={
-          <CircularProgressWrapper>
-            <CircularProgress />
-          </CircularProgressWrapper>
-        }
-      >
-        <Outlet />
-      </Suspense>
-      <Footer></Footer>
+      <LayoutWrapper>
+        <SuspenseWrapper>
+          <Suspense
+            fallback={
+              <CircularProgressWrapper>
+                <CircularProgress />
+              </CircularProgressWrapper>
+            }
+          >
+            <Outlet />
+          </Suspense>
+        </SuspenseWrapper>
+        <Footer></Footer>
+      </LayoutWrapper>
     </>
   );
 };
@@ -38,4 +42,14 @@ const CircularProgressWrapper = styled.div`
   height: 100vh;
   width: 100vw;
 `;
+
+const SuspenseWrapper = styled.div`
+  height: calc(100vh - 88px);
+  width: 100vw;
+`;
+
+const LayoutWrapper = styled.div`
+  padding: 0 10px;
+`;
+
 export default Layout;

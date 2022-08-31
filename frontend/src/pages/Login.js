@@ -31,6 +31,7 @@ const Login = () => {
             variant="standard"
             onChange={(e) => setEmail(e.target.value)}
           />
+          <br />
           <TextField
             id="standard-basic"
             label="Password"
@@ -38,6 +39,7 @@ const Login = () => {
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
+          <br />
           <Button variant="contained" onClick={clickEvent}>
             Login
           </Button>
