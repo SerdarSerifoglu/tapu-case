@@ -1,28 +1,48 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import httpService from "../helpers/httpService.js";
-export const getUser = createAsyncThunk("user/getUser", async (filterData) => {
-  try {
-    const { email, password } = filterData;
 
-    const { data } = await httpService.get(
-      `/users?email=${email}&password=${password}`
-    );
+export const userSignedIn = (state) => state.user;
 
-    return data;
-  } catch (error) {
-    return [];
+export const userControl = createAsyncThunk(
+  "user/getUser",
+  async (filterData) => {
+    try {
+      const { email, password } = filterData;
+
+      const { data } = await httpService.get(
+        `/users?email=${email}&password=${password}`
+      );
+      if (data.length <= 0) {
+        throw new Error("Kullanıcı Bilgisi Hatalı");
+      }
+      return data;
+    } catch (error) {
+      alert(error.message);
+      throw new Error(error.message);
+      return [];
+    }
   }
-});
+);
 
 const initialState = {
   isSignedIn: false,
 };
 
-const loginSlice = createSlice({
-  name: "login",
+const userSlice = createSlice({
+  name: "user",
   initialState: initialState,
-  reducers: {},
-  extraReducers: {},
+  reducers: {
+    logout: (state, action) => {
+      state.isSignedIn = false;
+    },
+  },
+  extraReducers: {
+    [userControl.fulfilled]: (state, action) => {
+      state.user = action.payload[0];
+      state.isSignedIn = true;
+    },
+  },
 });
 
-export default loginSlice.reducer;
+export const { logout } = userSlice.actions;
+export default userSlice.reducer;

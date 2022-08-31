@@ -1,4 +1,4 @@
-import GlobalStyle2 from "./theme/globalStyles2.js";
+import GlobalStyle from "./theme/globalStyles.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Account from "./pages/Account.js";
@@ -8,7 +8,7 @@ import List from "./pages/List.js";
 function App() {
   return (
     <>
-      <GlobalStyle2 />
+      <GlobalStyle />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

@@ -1,6 +1,6 @@
 import axios from "axios";
 
 const httpService = axios.create();
-httpService.defaults.baseURL = process.env.REACT_APP_PROJECT_API_URL;
+httpService.defaults.baseURL = "http://localhost:3000/";
 
 export default httpService;

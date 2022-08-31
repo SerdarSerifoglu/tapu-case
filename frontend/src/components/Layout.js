@@ -1,10 +1,20 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { CircularProgress } from "@mui/material";
 import styled from "styled-components";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
+import { useSelector } from "react-redux";
 
 const Layout = () => {
+  var userSignedIn = useSelector((state) => state.user.isSignedIn);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!userSignedIn) {
+      navigate("/login");
+    }
+  }, [userSignedIn]);
+
   return (
     <>
       <Suspense
