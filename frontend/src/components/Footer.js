@@ -3,13 +3,18 @@ import List from "../media/list.svg";
 import Account from "../media/account.svg";
 
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
     <>
       <FooterWrapper>
-        <FooterButton iconSrc={List} text="List"></FooterButton>
-        <FooterButton iconSrc={Account} text="Account"></FooterButton>
+        <NavLink to="/list">
+          <FooterButton iconSrc={List} text="List"></FooterButton>
+        </NavLink>
+        <NavLink to="/account">
+          <FooterButton iconSrc={Account} text="Account"></FooterButton>{" "}
+        </NavLink>
       </FooterWrapper>
     </>
   );
