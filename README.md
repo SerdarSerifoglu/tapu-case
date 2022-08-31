@@ -1,4 +1,4 @@
-Projeyi indirdikten sonra sırasıyla terminalden aşağıdaki kodları çalıştırmalısınız
+Projeyi indirdikten sonra sırasıyla terminalden aşağıdaki kodları çalıştırmalısınız     
 1- cd frontend
 2- npm run start
 
