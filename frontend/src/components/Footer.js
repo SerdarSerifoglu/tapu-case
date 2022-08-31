@@ -9,12 +9,12 @@ const Footer = () => {
   return (
     <>
       <FooterWrapper>
-        <NavLink to="/list">
+        <NavLinkStyled to="/list">
           <FooterButton iconSrc={List} text="List"></FooterButton>
-        </NavLink>
-        <NavLink to="/account">
+        </NavLinkStyled>
+        <NavLinkStyled to="/account">
           <FooterButton iconSrc={Account} text="Account"></FooterButton>{" "}
-        </NavLink>
+        </NavLinkStyled>
       </FooterWrapper>
     </>
   );
@@ -27,6 +27,18 @@ const FooterWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const NavLinkStyled = styled(NavLink)`
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  &:hover,
+  &:focus {
+    background-color: #e8e8e8;
+    border-radius: 10px;
+  }
 `;
 
 export default Footer;
